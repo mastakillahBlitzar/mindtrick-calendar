@@ -1,0 +1,41 @@
+.day-wrapper {
+    height: var(--mt-content-height);
+    overflow-y: auto;
+    &__title{
+        font-size: var(--mt-font-size-title);
+        text-align: center;
+    }
+
+    &__day-grid{
+       
+        &__day-names{
+            display: grid;
+            grid-template-columns: repeat(7, minmax(30px, 1fr));
+            grid-gap: 2px;
+        }
+
+        &__weeks{
+            display: grid;
+            grid-template-columns: repeat(7, minmax(30px, 1fr));
+            grid-gap: 2px;
+        }
+    }
+  
+}
+
+.unit-day-name{
+    font-size: var(--mt-font-size-weekdays);
+}
+
+.unit-day {
+    font-size: var(--mt-font-size-content);
+}
+
+.unit-day, .unit-day-name{
+    text-align: center;
+}
+
+.disabled-day {
+    background-color: #f0f0f0;
+    color: #c2c2c2;
+}

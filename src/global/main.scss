@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
+html{
+    font-size: 10px;
+    --mt-font-family-principal: "Roboto", "Helvetica Neue", sans-serif;
+    --mt-font-size-title: 1.2rem;
+    --mt-font-size-weekdays: 1.6rem;
+    --mt-font-size-content: 1.4rem;
+    --mt-default-padding: .3rem 0;
+    --mt-content-height: 20rem;
+    --mt-item-hover-color: rgba(147, 170, 228, 0.68);
+    --mt-item-selected-color: rgb(56, 129, 208);
+    --mt-item-border-radius: .4rem;
+    font-family: var(--mt-font-family-principal);
+}

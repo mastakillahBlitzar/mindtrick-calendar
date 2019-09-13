@@ -1,0 +1,19 @@
+.month-wrapper{
+    height: var(--mt-content-height);
+    overflow-y: auto;
+    &__title{
+        font-size: var(--mt-font-size-title);
+        text-align: center;
+    }
+
+    &__month-grid{
+        display: grid;
+        grid-template-columns: repeat(3, minmax(70px, 1fr));
+        grid-gap: 2px;
+    }
+}
+
+.unit-month{
+    font-size: var(--mt-font-size-content);
+    text-align: center;
+}

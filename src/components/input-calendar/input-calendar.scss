@@ -1,0 +1,42 @@
+:host(.input-calendar){}
+
+input::placeholder{
+    text-align: center;
+}
+
+input:disabled, input[disabled] {
+    background-color: #c2c2c24f;
+    border-radius: .4rem;
+}
+
+input{
+    border: none;
+    text-align: center;
+    outline: none;
+}
+
+.wrapper{
+    padding: 0 6rem;
+    display: inline-flex;
+    align-items: center;
+
+    &__year, &__month, &__day{
+        width: 100%;
+        &:focus {
+            border-bottom: 2px solid var(--mt-item-hover-color);
+        }
+    }
+
+    &__month{
+
+    }
+
+    &__day{
+
+    }
+
+    &__divider{
+
+    }
+}
+

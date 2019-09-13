@@ -1,0 +1,20 @@
+.spacing {
+    padding: var(--mt-default-padding);
+}
+
+.selectable {
+    transition: all 0.2s ease-in;
+    border-radius: var(--mt-item-border-radius);
+
+    &:hover{
+        background-color: var(--mt-item-hover-color);
+    }
+}
+
+.selected {
+    background-color: var(--mt-item-selected-color);
+    color: white;
+    font-weight: 400;
+    cursor: pointer;  
+
+}

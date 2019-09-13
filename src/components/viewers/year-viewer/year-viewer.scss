@@ -1,0 +1,21 @@
+.year-wrapper {
+     font-weight: 300;
+     height: var(--mt-content-height);
+     overflow-y: auto;
+    &__title {
+        font-size: var(--mt-font-size-title);
+        text-align: center;
+    }
+
+    &__year-grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(30px, 1fr));
+        grid-gap: 2px;
+    }
+}
+
+.unit-year{
+    font-size: var(--mt-font-size-content);
+    text-align: center;
+}
+
