@@ -11,7 +11,7 @@ const moment = _rollupMoment || _moment;
 })
 export class YearViewer {
 
-    private years: { value: any, selected: boolean }[] = [];
+    years: { value: any, selected: boolean }[] = [];
     @Event() calendarFocus!: EventEmitter;
     @Event() onSelectYear!: EventEmitter;
 
@@ -33,8 +33,6 @@ export class YearViewer {
     }
 
     fillYears(endYear) {
-        console.log('end', endYear, moment().format('YYYY'));
-        
         for (let i = this.initialYear; i <= endYear; i++) {
             this.years.push({ value: i, selected: false });
         }

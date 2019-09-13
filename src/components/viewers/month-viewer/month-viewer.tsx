@@ -31,7 +31,7 @@ export class MonthViewer {
             const month = d.toLocaleString('es-CO', { month: 'long' });
             this.months.push({
                 value: i,
-                name: month,
+                name: month.toUpperCase(),
                 selected: false
             });
         }

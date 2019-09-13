@@ -28,20 +28,6 @@ export namespace Components {
     'endyear': number;
     'initialyear': number;
   }
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
-  }
   interface YearViewer {
     'endYear': number;
     'initialYear': number;
@@ -76,12 +62,6 @@ declare global {
     new (): HTMLMtCalendarElement;
   };
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
-  };
-
   interface HTMLYearViewerElement extends Components.YearViewer, HTMLStencilElement {}
   var HTMLYearViewerElement: {
     prototype: HTMLYearViewerElement;
@@ -92,7 +72,6 @@ declare global {
     'input-calendar': HTMLInputCalendarElement;
     'month-viewer': HTMLMonthViewerElement;
     'mt-calendar': HTMLMtCalendarElement;
-    'my-component': HTMLMyComponentElement;
     'year-viewer': HTMLYearViewerElement;
   }
 }
@@ -120,20 +99,6 @@ declare namespace LocalJSX {
     'endyear'?: number;
     'initialyear'?: number;
   }
-  interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
-  }
   interface YearViewer extends JSXBase.HTMLAttributes<HTMLYearViewerElement> {
     'endYear'?: number;
     'initialYear'?: number;
@@ -147,7 +112,6 @@ declare namespace LocalJSX {
     'input-calendar': InputCalendar;
     'month-viewer': MonthViewer;
     'mt-calendar': MtCalendar;
-    'my-component': MyComponent;
     'year-viewer': YearViewer;
   }
 }

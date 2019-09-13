@@ -7,8 +7,6 @@ import { Component, h, Listen, State, Prop } from '@stencil/core';
 })
 export class MtCalendar {
 
-
-
     @State() mDate = { day: '', month: '', year: '' };
 
     @State() openMonths = false;
@@ -30,8 +28,6 @@ export class MtCalendar {
 
     @Listen('monthFocus')
     onMonthFocus(ev) {
-        console.log('month', this.mDate.month, ev.detail);
-
         if (this.mDate.month.toString() !== ev.detail) {
             this.mDate = { year: this.mDate.year, month: ev.detail, day: '' };
         }
@@ -50,7 +46,6 @@ export class MtCalendar {
 
     @Listen('onSelectYear')
     onSelectedYear(ev) {
-
         if (this.mDate.year.toString() !== ev.detail) {
             this.mDate = { year: ev.detail, month: '', day: '' };
         }
@@ -67,7 +62,6 @@ export class MtCalendar {
 
     @Listen('onSelectDay')
     onSelectedDay(ev) {
-
         this.mDate = { year: this.mDate.year, month: this.mDate.month, day: ev.detail };
     }
 
@@ -81,8 +75,6 @@ export class MtCalendar {
     };
 
     showYears() {
-        console.log('initial', this.initialyear, this.endyear);
-        
         return this.openYears && <year-viewer initialYear={this.initialyear} endYear={this.endyear} selectedYear={this.mDate.year}></year-viewer>
     }
 
@@ -96,7 +88,6 @@ export class MtCalendar {
     }
 
     blurOut = () => {
-        console.log('blur');
         this.openMonths = false;
         this.openDays = false;
         this.openYears = false;
