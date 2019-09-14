@@ -65,15 +65,6 @@ export class MtCalendar {
         this.mDate = { year: this.mDate.year, month: this.mDate.month, day: ev.detail };
     }
 
-
-    hostData() {
-        return {
-            class: {
-                'input-calendar': true
-            }
-        };
-    };
-
     showYears() {
         return this.openYears && <year-viewer initialYear={this.initialyear} endYear={this.endyear} selectedYear={this.mDate.year}></year-viewer>
     }

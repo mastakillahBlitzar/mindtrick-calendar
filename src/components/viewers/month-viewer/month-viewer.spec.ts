@@ -7,7 +7,7 @@ it('should render month viewer component', async () => {
         html: `<month-viewer></month-viewer>`
     });
     expect(page.root).toEqualLightHtml(
-        `<month-viewer class=\"input-calendar\"></month-viewer>`
+        `<month-viewer></month-viewer>`
     );
 });
 

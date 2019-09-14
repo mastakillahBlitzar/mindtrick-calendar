@@ -1,8 +1,14 @@
-:host(.input-calendar){}
-
 .calendar-wrapper{
-    width: 30rem;
+    width: 100%;
     padding: 1rem;
     outline: none;
+    text-align: center;
+    margin: auto;
+}
+
+@media all and (min-width: 540px) {
+    .calendar-wrapper{
+        width: 30rem;
+    }
 }
 

@@ -47,15 +47,6 @@ export class YearViewer {
         this.notify = !this.notify;
     }
 
-
-    hostData() {
-        return {
-            class: {
-                'input-calendar': true
-            }
-        };
-    };
-
     selectYear = (y) => {
         this.years.forEach(e => e.selected = false);
         y.selected = true;

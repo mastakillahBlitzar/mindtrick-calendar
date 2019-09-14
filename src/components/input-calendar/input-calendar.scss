@@ -1,42 +1,43 @@
-:host(.input-calendar){}
+:host {}
 
-input::placeholder{
+input::placeholder {
     text-align: center;
 }
 
-input:disabled, input[disabled] {
-    background-color: #c2c2c24f;
-    border-radius: .4rem;
+input:disabled::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #c2c2c24f;
+}
+input:disabled:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #c2c2c24f;
+}
+input:disabled::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #c2c2c24f;
+}
+input:disabled:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #c2c2c24f;
 }
 
-input{
+input {
     border: none;
     text-align: center;
     outline: none;
+    max-width: 100px;
 }
 
-.wrapper{
-    padding: 0 6rem;
+.wrapper {
+    padding: .5rem 4rem;
     display: inline-flex;
     align-items: center;
+    width: 60%;
+    border-bottom: #c2c2c24f solid 1.5px;
 
-    &__year, &__month, &__day{
+    &__year,
+    &__month,
+    &__day {
         width: 100%;
+
         &:focus {
             border-bottom: 2px solid var(--mt-item-hover-color);
         }
     }
-
-    &__month{
-
-    }
-
-    &__day{
-
-    }
-
-    &__divider{
-
-    }
 }
-

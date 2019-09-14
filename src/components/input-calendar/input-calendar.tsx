@@ -44,22 +44,14 @@ export class InputCalendar {
         this.onDayFocus();
     }
 
-    hostData() {
-        return {
-            class: {
-                'input-calendar': true
-            }
-        };
-    };
-
     render() {
         return (
             <div class="wrapper">
-                <input onInput={(e) => this.handleYearChange(e)} value={this.sYear} onFocus={(e) => this.handleYearChange(e)} placeholder="AÑO" class="wrapper__year" />
+                <input min="1900" max="2019" type="number" onInput={(e) => this.handleYearChange(e)} value={this.sYear} onFocus={(e) => this.handleYearChange(e)} placeholder="AÑO" class="wrapper__year" />
                 <div class="wrapper__divider" tabindex="-1">/</div>
-                <input id="month" disabled={this.sYear === ''} onInput={(e) => this.handleMonthChange(e)} value={this.sMonth} onFocus={(e) => this.handleMonthChange(e)} placeholder="MES" class="wrapper__month" />
+                <input min="1" max="12" type="number" id="month" disabled={this.sYear === ''} onInput={(e) => this.handleMonthChange(e)} value={this.sMonth} onFocus={(e) => this.handleMonthChange(e)} placeholder="MES" class="wrapper__month" />
                 <div class="wrapper__divider" tabindex="-1">/</div>
-                <input id="day" disabled={this.sMonth === ''} onInput={(e) => this.handleDayChange(e)} value={this.sDay} onFocus={(e) => this.handleDayChange(e)} placeholder="DÍA" class="wrapper__day" />
+                <input min="1" max="31" type="number" id="day" disabled={this.sMonth === ''} onInput={(e) => this.handleDayChange(e)} value={this.sDay} onFocus={(e) => this.handleDayChange(e)} placeholder="DÍA" class="wrapper__day" />
             </div>
         );
     };

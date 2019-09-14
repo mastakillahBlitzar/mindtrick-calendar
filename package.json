@@ -14,10 +14,16 @@
     "dist/",
     "loader/"
   ],
+  "jest": {
+    "unmockedModulePathPatterns": [
+      "./node_modules/lodash"
+    ]
+  },
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
+    "test-cover": "stencil test --spec --e2e --collect-coverage",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
   },

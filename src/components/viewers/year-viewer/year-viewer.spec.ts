@@ -7,7 +7,7 @@ it('should render year viewer component', async () => {
         html: `<year-viewer initialyear=1991 endyear=2000></year-viewer>`
     });
     expect(page.root).toEqualLightHtml(
-        `<year-viewer class=\"input-calendar\" endyear=\"2000\" initialyear=\"1991\"></year-viewer>`
+        `<year-viewer endyear=\"2000\" initialyear=\"1991\"></year-viewer>`
     );
 });
 

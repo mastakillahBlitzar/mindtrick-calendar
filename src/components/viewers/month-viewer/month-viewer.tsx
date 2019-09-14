@@ -37,14 +37,6 @@ export class MonthViewer {
         }
     }
 
-    hostData() {
-        return {
-            class: {
-                'input-calendar': true
-            }
-        };
-    };
-
     selectMonth = (m) => {
         this.months.forEach(e => e.selected = false );
         m.selected = true;
