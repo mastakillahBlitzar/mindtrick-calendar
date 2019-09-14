@@ -1,4 +1,5 @@
-import { Component, h, Listen, State, Prop } from '@stencil/core';
+import { Component, h, Listen, State, Prop, Method, EventEmitter, Event } from '@stencil/core';
+import moment from "moment"
 
 @Component({
     tag: 'mt-calendar',
@@ -17,7 +18,10 @@ export class MtCalendar {
 
     @Prop() initialyear: number;
     @Prop() endyear: number;
+    @Prop() format: string = 'YYYY/MM/DD';
+    @Event() selectedDay!: EventEmitter;
 
+    
     @Listen('yearFocus')
     onYearFocus(ev: any) {
         if (this.mDate.year.toString() !== ev.detail) {
@@ -30,7 +34,6 @@ export class MtCalendar {
 
     @Listen('monthFocus')
     onMonthFocus(ev) {
-        console.log('month', this.mDate.month, ev.detail);
 
         if (this.mDate.month.toString() !== ev.detail) {
             this.mDate = { year: this.mDate.year, month: ev.detail, day: '' };
@@ -46,6 +49,7 @@ export class MtCalendar {
         this.openMonths = false;
         this.openDays = true;
         this.openYears = false;
+        this.selectedDay.emit(this.geValue())
     }
 
     @Listen('onSelectYear')
@@ -69,9 +73,14 @@ export class MtCalendar {
     onSelectedDay(ev) {
 
         this.mDate = { year: this.mDate.year, month: this.mDate.month, day: ev.detail };
+        this.selectedDay.emit(this.geValue())
+
     }
 
-
+    @Method()
+    async geValue() {
+       return moment(`${this.mDate.year}/${this.mDate.month}/${this.mDate.day}`, 'YYYY/MM/DD').format(this.format)
+    }
     hostData() {
         return {
             class: {
@@ -81,7 +90,6 @@ export class MtCalendar {
     };
 
     showYears() {
-        console.log('initial', this.initialyear, this.endyear);
         
         return this.openYears && <year-viewer initialYear={this.initialyear} endYear={this.endyear} selectedYear={this.mDate.year}></year-viewer>
     }
@@ -96,7 +104,6 @@ export class MtCalendar {
     }
 
     blurOut = () => {
-        console.log('blur');
         this.openMonths = false;
         this.openDays = false;
         this.openYears = false;

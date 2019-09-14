@@ -7,10 +7,31 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type     | Default     |
-| ------------- | ------------- | ----------- | -------- | ----------- |
-| `endyear`     | `endyear`     |             | `number` | `undefined` |
-| `initialyear` | `initialyear` |             | `number` | `undefined` |
+| Property      | Attribute     | Description | Type     | Default        |
+| ------------- | ------------- | ----------- | -------- | -------------- |
+| `endyear`     | `endyear`     |             | `number` | `undefined`    |
+| `format`      | `format`      |             | `string` | `'YYYY/MM/DD'` |
+| `initialyear` | `initialyear` |             | `number` | `undefined`    |
+
+
+## Events
+
+| Event         | Description | Type               |
+| ------------- | ----------- | ------------------ |
+| `selectedDay` |             | `CustomEvent<any>` |
+
+
+## Methods
+
+### `geValue() => Promise<string>`
+
+
+
+#### Returns
+
+Type: `Promise<string>`
+
+
 
 
 ## Dependencies

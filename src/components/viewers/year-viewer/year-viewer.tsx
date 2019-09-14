@@ -32,7 +32,6 @@ export class YearViewer {
     }
 
     fillYears(endYear) {
-        console.log('end', endYear, moment().format('YYYY'));
         
         for (let i = this.initialYear; i <= endYear; i++) {
             this.years.push({ value: i, selected: false });

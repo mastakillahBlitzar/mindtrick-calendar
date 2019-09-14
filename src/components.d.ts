@@ -26,6 +26,8 @@ export namespace Components {
   }
   interface MtCalendar {
     'endyear': number;
+    'format': string;
+    'geValue': () => Promise<string>;
     'initialyear': number;
   }
   interface MyComponent {
@@ -118,7 +120,9 @@ declare namespace LocalJSX {
   }
   interface MtCalendar extends JSXBase.HTMLAttributes<HTMLMtCalendarElement> {
     'endyear'?: number;
+    'format'?: string;
     'initialyear'?: number;
+    'onSelectedDay'?: (event: CustomEvent<any>) => void;
   }
   interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
     /**
