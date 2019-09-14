@@ -6,8 +6,9 @@
     transition: all 0.2s ease-in;
     border-radius: var(--mt-item-border-radius);
 
-    &:hover{
+    &:hover {
         background-color: var(--mt-item-hover-color);
+        cursor: pointer;
     }
 }
 
@@ -15,6 +16,5 @@
     background-color: var(--mt-item-selected-color);
     color: white;
     font-weight: 400;
-    cursor: pointer;  
-
+    cursor: pointer;
 }

@@ -10,7 +10,7 @@ import { default as _rollupMoment } from 'moment';
 })
 export class YearViewer {
 
-    private years: { value: any, selected: boolean }[] = [];
+    years: { value: any, selected: boolean }[] = [];
     @Event() calendarFocus!: EventEmitter;
     @Event() onSelectYear!: EventEmitter;
 
@@ -46,15 +46,6 @@ export class YearViewer {
         }
         this.notify = !this.notify;
     }
-
-
-    hostData() {
-        return {
-            class: {
-                'input-calendar': true
-            }
-        };
-    };
 
     selectYear = (y) => {
         this.years.forEach(e => e.selected = false);

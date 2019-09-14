@@ -31,19 +31,11 @@ export class MonthViewer {
             const month = d.toLocaleString('es-CO', { month: 'long' });
             this.months.push({
                 value: i,
-                name: month,
+                name: month.toUpperCase(),
                 selected: false
             });
         }
     }
-
-    hostData() {
-        return {
-            class: {
-                'input-calendar': true
-            }
-        };
-    };
 
     selectMonth = (m) => {
         this.months.forEach(e => e.selected = false );
