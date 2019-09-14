@@ -1,12 +1,12 @@
 import { Component, h, Prop, Event, EventEmitter, State } from '@stencil/core';
-import * as _moment from 'moment';
+// import * as myMoment from 'moment';
 import { default as _rollupMoment } from 'moment';
 import * as _lodash from 'lodash-es';
-
-const moment = _rollupMoment || _moment;
+import moment from "moment"
+//const moment = _rollupMoment || moment;
 
 export interface CalendarDate {
-    mDate: _moment.Moment;
+    mDate: moment.Moment;
     selected?: boolean;
     today?: boolean;
 }
@@ -18,6 +18,7 @@ export interface CalendarDate {
 })
 export class DayViewer {
 
+   // momment: myMoment.Moment;
     dayNames = ['D', 'L', 'M', 'M', 'J', 'V', 'S'];
     weeks: CalendarDate[][] = [];
 
@@ -61,7 +62,7 @@ export class DayViewer {
         this.weeks = weeks;
     }
 
-    fillDates(currentMoment: _moment.Moment): CalendarDate[] {
+    fillDates(currentMoment: moment.Moment): CalendarDate[] {
         const firstOfMonth = moment(currentMoment).startOf('month').day();
         const firstDayOfGrid = moment(currentMoment).startOf('month').subtract(firstOfMonth, 'days');
         const start = firstDayOfGrid.date();
@@ -76,17 +77,17 @@ export class DayViewer {
             });
     }
 
-    isToday(date: _moment.Moment): boolean {
+    isToday(date: moment.Moment): boolean {
         return moment().isSame(moment(date), 'day');
     }
 
-    isSelected(date: _moment.Moment): boolean {
+    isSelected(date: moment.Moment): boolean {
         return _lodash.findIndex(this.selectedDates, (selectedDate) => {
             return moment(date).isSame(selectedDate.mDate, 'day');
         }) > -1;
     }
 
-    isSelectedMonth(date: _moment.Moment): boolean {
+    isSelectedMonth(date: moment.Moment): boolean {
         const mDate = moment(this.selectedDate, 'YYYY/MM/DD');
         return moment(date).isSame(mDate, 'month');
     }

@@ -1,8 +1,7 @@
 import { Component, h, EventEmitter, Event, Prop, State } from '@stencil/core';
-import * as _moment from 'moment';
+import moment from "moment";
 import { default as _rollupMoment } from 'moment';
 
-const moment = _rollupMoment || _moment;
 
 @Component({
     tag: 'year-viewer',
